@@ -20,7 +20,7 @@ export default function BabyBirthdayRSVP() {
   };
 
   return (
-    <div className="min-h-screen bg-sage-100 flex items-center justify-center p-4 relative" style={{backgroundImage: 'url(photo/133853149951438518.jpg)', backgroundRepeat: 'repeat'}}>
+    <div className="min-h-screen bg-sage-100 flex items-center justify-center p-4 relative" style={{backgroundImage: 'url(/photo/133853149951438518.jpg)', backgroundRepeat: 'repeat'}}>
       {/* Baby Photo Background */}
       <img src="/photo/baby.jpg" alt="Baby" className="absolute top-0 left-0 w-full h-96 object-cover opacity-70" />
 
