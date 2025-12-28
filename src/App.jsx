@@ -24,7 +24,7 @@ export default function App() {
       
       {/* Background Photo + Overlay */}
       <div className="absolute top-0 left-0 w-full h-96">
-        <img src="/photo/background.jpg" alt="Baby" className="w-full h-full object-cover opacity-40" />
+        <img src="/photo/background.png" alt="Baby" className="w-full h-full object-cover opacity-40" />
         <div className="absolute top-0 left-0 w-full h-full bg-black/30"></div>
       </div>
 
