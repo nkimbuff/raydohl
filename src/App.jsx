@@ -26,21 +26,7 @@ return (
   >
     {/* Overlay for readability */}
     <div className="absolute top-0 left-0 w-full h-full bg-black/30"></div>
-
-    {/* Card */}
-    <div className="rounded-2xl shadow-xl max-w-md w-full p-6 bg-white/90 backdrop-blur-md relative z-10">
-      <h1 className="text-2xl font-bold text-center mb-2 text-gray-900">Ray's First Birthday 🎉</h1>
-      <p className="text-center mb-2 text-gray-800">We can’t wait to celebrate with you!</p>
-
-      {/* Event Details Section */}
-      <div className="mb-4 text-center p-4 bg-pink-50/95 rounded-lg shadow-inner">
-        <h2 className="text-lg font-semibold text-gray-900">🎂 Event Details 🎂</h2>
-        <p className="text-gray-900 mt-1">📅 Date: March 14, 2025</p>
-        <p className="text-gray-900">⏰ Time: 12:00 PM - 3:00 PM EST</p>
-        <p className="text-gray-900">📍 Location: Trummer's on Main</p>
-        <p className="text-gray-900">🏠 Address: 7134 Main St, Clifton, VA 20124</p>
-      </div>
-
+    
       {/* Card */}
       <div className="rounded-2xl shadow-xl max-w-md w-full p-6 bg-white/90 backdrop-blur-md relative z-10 -mt-32">
         <h1 className="text-2xl font-bold text-center mb-2 text-gray-900">Ray's First Birthday 🎉</h1>
