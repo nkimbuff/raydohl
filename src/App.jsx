@@ -20,9 +20,9 @@ export default function BabyBirthdayRSVP() {
   };
 
   return (
-    <div className="min-h-screen bg-sage-100 flex items-center justify-center p-4 relative" style={{backgroundImage: 'url(/photo/133853149951438518.jpg)', backgroundRepeat: 'repeat'}}>
+    <div className="min-h-screen bg-sage-100 flex items-center justify-center p-4 relative" style={{backgroundImage: 'url(/photo/background.png)', backgroundRepeat: 'repeat'}}>
       {/* Baby Photo Background */}
-      <img src="/photo/baby.jpg" alt="Baby" className="absolute top-0 left-0 w-full h-96 object-cover opacity-70" />
+      <img src="/photo/133853149951438518.jpg" alt="Baby" className="absolute top-0 left-0 w-full h-96 object-cover opacity-70" />
 
       <div className="rounded-2xl shadow-xl max-w-md w-full p-6 bg-white/90 backdrop-blur-md relative z-10 -mt-32">
         <h1 className="text-2xl font-bold text-center mb-2 relative z-20">Ray's First Birthday 🎉</h1>
