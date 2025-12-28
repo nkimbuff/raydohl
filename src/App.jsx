@@ -34,12 +34,12 @@ export default function App() {
       <div className="overlay"></div>
 
       {/* Card */}
-      <div className="rounded-2xl shadow-xl max-w-md w-full p-6 bg-white relative z-10">
+      <div className="rounded-2xl shadow-xl max-w-sm w-full p-4 bg-white/90 backdrop-blur-md relative z-10">
         <h1 className="text-2xl font-bold text-center mb-2 text-gray-900">Ray's First Birthday 🎉</h1>
         <p className="text-center mb-2 text-gray-900">We can’t wait to celebrate with you!</p>
 
         {/* Event Details */}
-        <div className="mb-4 text-center p-4 bg-pink-50 rounded-lg shadow-inner">
+        <div className="mb-4 text-center p-3 bg-pink-50/90 rounded-lg shadow-inner">
           <h2 className="text-lg font-semibold text-gray-900">🎂 Event Details 🎂</h2>
           <p className="text-gray-900 mt-1">📅 Date: March 14, 2025</p>
           <p className="text-gray-900">⏰ Time: 12:00 PM - 3:00 PM EST</p>
