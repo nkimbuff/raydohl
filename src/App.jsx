@@ -19,18 +19,24 @@ export default function App() {
     alert("RSVP submitted! (Hook this up to a backend or Google Form)");
   };
 
-return (
-  <div 
-    className="min-h-screen flex items-center justify-center p-4 relative" 
-    style={{ backgroundImage: 'url(/photo/background.png)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}
-  >
-    {/* Overlay for readability */}
-    <div className="absolute top-0 left-0 w-full h-full bg-black/30"></div>
-    
+  return (
+    <div
+      className="min-h-screen flex items-center justify-center p-4 relative"
+      style={{
+        backgroundImage: 'url(/photo/background.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+      }}
+    >
+      {/* Dark overlay for readability in dark mode */}
+      <div className="absolute top-0 left-0 w-full h-full bg-black/50"></div>
+
       {/* Card */}
-      <div className="rounded-2xl shadow-xl max-w-md w-full p-6 bg-white/90 backdrop-blur-md relative z-10 -mt-32">
+      <div className="rounded-2xl shadow-xl max-w-md w-full p-6 bg-white/95 backdrop-blur-md relative z-10">
+        {/* Title */}
         <h1 className="text-2xl font-bold text-center mb-2 text-gray-900">Ray's First Birthday 🎉</h1>
-        <p className="text-center mb-2 text-gray-800">We can’t wait to celebrate with you!</p>
+        <p className="text-center mb-2 text-gray-900">We can’t wait to celebrate with you!</p>
 
         {/* Event Details */}
         <div className="mb-4 text-center p-4 bg-pink-50/95 rounded-lg shadow-inner">
@@ -46,10 +52,22 @@ return (
           <label className="block text-sm font-medium mb-1 text-gray-900">Will you be attending?</label>
           <div className="flex gap-4">
             <label className="flex items-center gap-2 text-gray-900">
-              <input type="radio" name="attending" value="yes" checked={form.attending === "yes"} onChange={handleChange} /> Yes
+              <input
+                type="radio"
+                name="attending"
+                value="yes"
+                checked={form.attending === "yes"}
+                onChange={handleChange}
+              /> Yes
             </label>
             <label className="flex items-center gap-2 text-gray-900">
-              <input type="radio" name="attending" value="no" checked={form.attending === "no"} onChange={handleChange} /> No
+              <input
+                type="radio"
+                name="attending"
+                value="no"
+                checked={form.attending === "no"}
+                onChange={handleChange}
+              /> No
             </label>
           </div>
         </div>
@@ -58,37 +76,88 @@ return (
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label className="block text-sm font-medium text-gray-900">Email Address</label>
-            <input type="email" name="email" required onChange={handleChange} className="w-full mt-1 rounded-lg border p-2" />
+            <input
+              type="email"
+              name="email"
+              required
+              onChange={handleChange}
+              className="w-full mt-1 rounded-lg border border-gray-300 p-2 text-gray-900 bg-white"
+            />
           </div>
 
+          {/* Adults */}
           <div>
             <label className="block text-sm font-medium mb-1 text-gray-900">Number of Adults</label>
             <div className="flex items-center gap-3">
-              <button type="button" onClick={() => setForm({ ...form, adults: Math.max(0, Number(form.adults) - 1) })} className="px-3 py-1 rounded-full bg-gray-200 text-lg">−</button>
+              <button
+                type="button"
+                onClick={() => setForm({ ...form, adults: Math.max(0, Number(form.adults) - 1) })}
+                className="px-3 py-1 rounded-full bg-gray-200 text-lg"
+              >
+                −
+              </button>
               <span className="w-8 text-center font-semibold text-gray-900">{form.adults}</span>
-              <button type="button" onClick={() => setForm({ ...form, adults: Number(form.adults) + 1 })} className="px-3 py-1 rounded-full bg-gray-200 text-lg">+</button>
+              <button
+                type="button"
+                onClick={() => setForm({ ...form, adults: Number(form.adults) + 1 })}
+                className="px-3 py-1 rounded-full bg-gray-200 text-lg"
+              >
+                +
+              </button>
             </div>
           </div>
 
+          {/* Kids */}
           <div>
             <label className="block text-sm font-medium mb-1 text-gray-900">Number of Kids</label>
             <div className="flex items-center gap-3">
-              <button type="button" onClick={() => setForm({ ...form, kids: Math.max(0, Number(form.kids) - 1) })} className="px-3 py-1 rounded-full bg-gray-200 text-lg">−</button>
+              <button
+                type="button"
+                onClick={() => setForm({ ...form, kids: Math.max(0, Number(form.kids) - 1) })}
+                className="px-3 py-1 rounded-full bg-gray-200 text-lg"
+              >
+                −
+              </button>
               <span className="w-8 text-center font-semibold text-gray-900">{form.kids}</span>
-              <button type="button" onClick={() => setForm({ ...form, kids: Number(form.kids) + 1 })} className="px-3 py-1 rounded-full bg-gray-200 text-lg">+</button>
+              <button
+                type="button"
+                onClick={() => setForm({ ...form, kids: Number(form.kids) + 1 })}
+                className="px-3 py-1 rounded-full bg-gray-200 text-lg"
+              >
+                +
+              </button>
             </div>
           </div>
 
+          {/* Kids Meals */}
           <div>
             <label className="block text-sm font-medium mb-1 text-gray-900">Kids Meals Needed</label>
             <div className="flex items-center gap-3">
-              <button type="button" onClick={() => setForm({ ...form, kidsMeals: Math.max(0, Number(form.kidsMeals) - 1) })} className="px-3 py-1 rounded-full bg-gray-200 text-lg">−</button>
+              <button
+                type="button"
+                onClick={() => setForm({ ...form, kidsMeals: Math.max(0, Number(form.kidsMeals) - 1) })}
+                className="px-3 py-1 rounded-full bg-gray-200 text-lg"
+              >
+                −
+              </button>
               <span className="w-8 text-center font-semibold text-gray-900">{form.kidsMeals}</span>
-              <button type="button" onClick={() => setForm({ ...form, kidsMeals: Number(form.kidsMeals) + 1 })} className="px-3 py-1 rounded-full bg-gray-200 text-lg">+</button>
+              <button
+                type="button"
+                onClick={() => setForm({ ...form, kidsMeals: Number(form.kidsMeals) + 1 })}
+                className="px-3 py-1 rounded-full bg-gray-200 text-lg"
+              >
+                +
+              </button>
             </div>
           </div>
 
-          <button type="submit" className="w-full bg-pink-400 text-white rounded-xl py-2 font-semibold hover:bg-pink-500 transition">Submit RSVP</button>
+          {/* Submit */}
+          <button
+            type="submit"
+            className="w-full bg-pink-400 text-white rounded-xl py-2 font-semibold hover:bg-pink-500 transition"
+          >
+            Submit RSVP
+          </button>
         </form>
       </div>
     </div>
