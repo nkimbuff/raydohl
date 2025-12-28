@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './index.css'; // import the CSS file
 
 export default function App() {
   const [form, setForm] = useState({
@@ -21,7 +22,7 @@ export default function App() {
 
   return (
     <div
-      className="min-h-screen flex items-center justify-center p-4 relative"
+      className="min-h-screen flex items-center justify-center relative p-4"
       style={{
         backgroundImage: 'url(/photo/background.png)',
         backgroundSize: 'cover',
@@ -29,17 +30,16 @@ export default function App() {
         backgroundRepeat: 'no-repeat',
       }}
     >
-      {/* Dark overlay for readability in dark mode */}
-      <div className="absolute top-0 left-0 w-full h-full bg-black/50"></div>
+      {/* Overlay */}
+      <div className="overlay"></div>
 
       {/* Card */}
-      <div className="rounded-2xl shadow-xl max-w-md w-full p-6 bg-white/95 backdrop-blur-md relative z-10">
-        {/* Title */}
+      <div className="rounded-2xl shadow-xl max-w-md w-full p-6 bg-white relative z-10">
         <h1 className="text-2xl font-bold text-center mb-2 text-gray-900">Ray's First Birthday 🎉</h1>
         <p className="text-center mb-2 text-gray-900">We can’t wait to celebrate with you!</p>
 
         {/* Event Details */}
-        <div className="mb-4 text-center p-4 bg-pink-50/95 rounded-lg shadow-inner">
+        <div className="mb-4 text-center p-4 bg-pink-50 rounded-lg shadow-inner">
           <h2 className="text-lg font-semibold text-gray-900">🎂 Event Details 🎂</h2>
           <p className="text-gray-900 mt-1">📅 Date: March 14, 2025</p>
           <p className="text-gray-900">⏰ Time: 12:00 PM - 3:00 PM EST</p>
@@ -81,7 +81,6 @@ export default function App() {
               name="email"
               required
               onChange={handleChange}
-              className="w-full mt-1 rounded-lg border border-gray-300 p-2 text-gray-900 bg-white"
             />
           </div>
 
