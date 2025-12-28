@@ -74,6 +74,17 @@ export default function App() {
 
         {/* Form */}
         <form onSubmit={handleSubmit} className="space-y-4">
+            {/* Name */}
+          <div>
+            <label className="block text-sm font-medium text-gray-900">Name</label>
+            <input
+              type="text"
+              name="name"
+              required
+              onChange={handleChange}
+              className="w-full mt-1 rounded-lg border border-gray-300 p-2 text-gray-900 bg-white"
+            />
+          </div>
           <div>
             <label className="block text-sm font-medium text-gray-900">Email Address</label>
             <input
