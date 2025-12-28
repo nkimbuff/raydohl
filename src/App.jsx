@@ -1,7 +1,10 @@
 import { useState } from "react";
 import './index.css'; // import the CSS file
+import { useNavigate } from "react-router-dom";
 
 export default function App() {
+  const navigate = useNavigate();
+
   const [form, setForm] = useState({
     attending: "yes",
     email: "",
@@ -26,15 +29,8 @@ export default function App() {
 
       const result = await response.json();
       if (result.status === 'success') {
-        alert("RSVP submitted successfully!");
-        setForm({
-          name: "",
-          email: "",
-          attending: "yes",
-          adults: 1,
-          kids: 0,
-          kidsMeals: 0
-        });
+        // Redirect to thank-you page
+        navigate('/thank-you');
       } else {
         alert("Error: " + result.message);
       }
