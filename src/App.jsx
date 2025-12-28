@@ -15,9 +15,32 @@ export default function App() {
     setForm({ ...form, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert("RSVP submitted! (Hook this up to a backend or Google Form)");
+
+    try {
+      const response = await fetch("https://script.google.com/macros/s/AKfycbx1djaxr8Qg6I1xHBB5FEJc3f1tt0G7BmClFvlx9B0fFJeqq2_6XpGCIhmBtqnaEzlM/exec", {
+        method: "POST",
+        body: JSON.stringify(form),
+      });
+
+      const result = await response.json();
+      if (result.status === 'success') {
+        alert("RSVP submitted successfully!");
+        setForm({
+          name: "",
+          email: "",
+          attending: "yes",
+          adults: 1,
+          kids: 0,
+          kidsMeals: 0
+        });
+      } else {
+        alert("Error: " + result.message);
+      }
+    } catch (error) {
+      alert("Error submitting RSVP: " + error.message);
+    }
   };
 
   return (
