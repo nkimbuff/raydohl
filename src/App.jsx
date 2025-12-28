@@ -8,20 +8,10 @@ export default function BabyBirthdayRSVP() {
     kids: 0,
     kidsMeals: 0
   });
-  const [babyPhoto, setBabyPhoto] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
-  };
-
-  const handlePhotoUpload = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => setBabyPhoto(reader.result);
-      reader.readAsDataURL(file);
-    }
   };
 
   const handleSubmit = (e) => {
@@ -30,13 +20,16 @@ export default function BabyBirthdayRSVP() {
   };
 
   return (
-    <div className="min-h-screen bg-sage-100 flex items-center justify-center p-4" style={{backgroundImage: 'url(/baby-bg-pattern.png)', backgroundRepeat: 'repeat'}}>
-      <div className="rounded-2xl shadow-xl max-w-md w-full p-6 bg-white/90 backdrop-blur-md">
-        <h1 className="text-2xl font-bold text-center mb-2">Ray's First Birthday 🎉</h1>
-        <p className="text-center text-gray-600 mb-2">We can’t wait to celebrate with you!</p>
+    <div className="min-h-screen bg-sage-100 flex items-center justify-center p-4 relative" style={{backgroundImage: 'url(/baby-bg-pattern.png)', backgroundRepeat: 'repeat'}}>
+      {/* Baby Photo Background */}
+      <img src="/photo/baby.jpg" alt="Baby" className="absolute top-0 left-0 w-full h-96 object-cover opacity-70" />
+
+      <div className="rounded-2xl shadow-xl max-w-md w-full p-6 bg-white/90 backdrop-blur-md relative z-10 -mt-32">
+        <h1 className="text-2xl font-bold text-center mb-2 relative z-20">Ray's First Birthday 🎉</h1>
+        <p className="text-center text-gray-600 mb-2 relative z-20">We can’t wait to celebrate with you!</p>
 
         {/* Event Details Section */}
-        <div className="mb-4 text-center p-4 bg-pink-50 rounded-lg shadow-inner">
+        <div className="mb-4 text-center p-4 bg-pink-50 rounded-lg shadow-inner relative z-20">
           <h2 className="text-lg font-semibold">🎂 Event Details 🎂</h2>
           <p className="text-gray-700 mt-1">📅 Date: March 14, 2025</p>
           <p className="text-gray-700">⏰ Time: 12:00 PM - 3:00 PM EST</p>
@@ -44,18 +37,8 @@ export default function BabyBirthdayRSVP() {
           <p className="text-gray-700">🏠 Address: 7134 Main St, Clifton, VA 20124</p>
         </div>
 
-        {/* Baby Photo Upload Section */}
-        <div className="mb-4 flex flex-col items-center">
-          {babyPhoto ? (
-            <img src={babyPhoto} alt="Baby" className="rounded-xl w-48 h-48 object-cover mb-3 shadow-lg" />
-          ) : (
-            <div className="w-48 h-48 bg-gray-200 flex items-center justify-center rounded-xl mb-3">Upload Baby Photo</div>
-          )}
-          <input type="file" accept="image/*" onChange={handlePhotoUpload} className="text-sm text-gray-600" />
-        </div>
-
         {/* Attendance Section */}
-        <div className="mb-4">
+        <div className="mb-4 relative z-20">
           <label className="block text-sm font-medium mb-1">Will you be attending?</label>
           <div className="flex gap-4">
             <label className="flex items-center gap-2">
@@ -67,7 +50,7 @@ export default function BabyBirthdayRSVP() {
           </div>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-4 relative z-20">
           <div>
             <label className="block text-sm font-medium">Email Address</label>
             <input type="email" name="email" required onChange={handleChange} className="w-full mt-1 rounded-lg border p-2" />
@@ -103,7 +86,7 @@ export default function BabyBirthdayRSVP() {
           <button type="submit" className="w-full bg-pink-400 text-white rounded-xl py-2 font-semibold hover:bg-pink-500 transition">Submit RSVP</button>
         </form>
 
-        <p className="text-xs text-center text-gray-400 mt-4">You can personalize this page with baby photos and themed backgrounds!</p>
+        <p className="text-xs text-center text-gray-400 mt-4 relative z-20">You can personalize this page with baby photos and themed backgrounds!</p>
       </div>
     </div>
   );
