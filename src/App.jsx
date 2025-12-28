@@ -20,7 +20,7 @@ export default function BabyBirthdayRSVP() {
   };
 
   return (
-    <div className="min-h-screen bg-sage-100 flex items-center justify-center p-4 relative" style={{backgroundImage: 'url(/baby-bg-pattern.png)', backgroundRepeat: 'repeat'}}>
+    <div className="min-h-screen bg-sage-100 flex items-center justify-center p-4 relative" style={{backgroundImage: 'url(photo/133853149951438518.jpg)', backgroundRepeat: 'repeat'}}>
       {/* Baby Photo Background */}
       <img src="/photo/baby.jpg" alt="Baby" className="absolute top-0 left-0 w-full h-96 object-cover opacity-70" />
 
@@ -86,7 +86,6 @@ export default function BabyBirthdayRSVP() {
           <button type="submit" className="w-full bg-pink-400 text-white rounded-xl py-2 font-semibold hover:bg-pink-500 transition">Submit RSVP</button>
         </form>
 
-        <p className="text-xs text-center text-gray-400 mt-4 relative z-20">You can personalize this page with baby photos and themed backgrounds!</p>
       </div>
     </div>
   );
