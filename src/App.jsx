@@ -21,30 +21,28 @@ export default function BabyBirthdayRSVP() {
 
   return (
     <div className="min-h-screen bg-sage-100 flex items-center justify-center p-4 relative" style={{backgroundImage: 'url(/photo/background.png)', backgroundRepeat: 'repeat'}}>
-      {/* Baby Photo Background */}
-      <img src="/photo/133853149951438518.jpg" alt="Baby" className="absolute top-0 left-0 w-full h-96 object-cover opacity-70" />
 
-      <div className="rounded-2xl shadow-xl max-w-md w-full p-6 bg-white/90 backdrop-blur-md relative z-10 -mt-32">
-        <h1 className="text-2xl font-bold text-center mb-2 relative z-20">Ray's First Birthday 🎉</h1>
-        <p className="text-center text-gray-600 mb-2 relative z-20">We can’t wait to celebrate with you!</p>
+      <div className="rounded-2xl shadow-xl max-w-md w-full p-6 bg-white/80 backdrop-blur-md relative z-10 -mt-32">
+        <h1 className="text-2xl font-bold text-center mb-2 relative z-20 text-gray-900 drop-shadow-md">Ray's First Birthday 🎉</h1>
+        <p className="text-center mb-2 relative z-20 text-gray-800 drop-shadow-sm">We can’t wait to celebrate with you!</p>
 
         {/* Event Details Section */}
-        <div className="mb-4 text-center p-4 bg-pink-50 rounded-lg shadow-inner relative z-20">
-          <h2 className="text-lg font-semibold">🎂 Event Details 🎂</h2>
-          <p className="text-gray-700 mt-1">📅 Date: March 14, 2025</p>
-          <p className="text-gray-700">⏰ Time: 12:00 PM - 3:00 PM EST</p>
-          <p className="text-gray-700">📍 Location: Trummer's on Main</p>
-          <p className="text-gray-700">🏠 Address: 7134 Main St, Clifton, VA 20124</p>
+        <div className="mb-4 text-center p-4 bg-pink-50/90 rounded-lg shadow-inner relative z-20">
+          <h2 className="text-lg font-semibold text-gray-900 drop-shadow-sm">🎂 Event Details 🎂</h2>
+          <p className="text-gray-800 mt-1 drop-shadow-sm">📅 Date: March 14, 2025</p>
+          <p className="text-gray-800 drop-shadow-sm">⏰ Time: 12:00 PM - 3:00 PM EST</p>
+          <p className="text-gray-800 drop-shadow-sm">📍 Location: Trummer's on Main</p>
+          <p className="text-gray-800 drop-shadow-sm">🏠 Address: 7134 Main St, Clifton, VA 20124</p>
         </div>
 
         {/* Attendance Section */}
         <div className="mb-4 relative z-20">
-          <label className="block text-sm font-medium mb-1">Will you be attending?</label>
+          <label className="block text-sm font-medium mb-1 text-gray-900 drop-shadow-sm">Will you be attending?</label>
           <div className="flex gap-4">
-            <label className="flex items-center gap-2">
+            <label className="flex items-center gap-2 text-gray-900 drop-shadow-sm">
               <input type="radio" name="attending" value="yes" checked={form.attending === "yes"} onChange={handleChange} /> Yes
             </label>
-            <label className="flex items-center gap-2">
+            <label className="flex items-center gap-2 text-gray-900 drop-shadow-sm">
               <input type="radio" name="attending" value="no" checked={form.attending === "no"} onChange={handleChange} /> No
             </label>
           </div>
@@ -52,33 +50,33 @@ export default function BabyBirthdayRSVP() {
 
         <form onSubmit={handleSubmit} className="space-y-4 relative z-20">
           <div>
-            <label className="block text-sm font-medium">Email Address</label>
+            <label className="block text-sm font-medium text-gray-900 drop-shadow-sm">Email Address</label>
             <input type="email" name="email" required onChange={handleChange} className="w-full mt-1 rounded-lg border p-2" />
           </div>
 
           <div>
-            <label className="block text-sm font-medium mb-1">Number of Adults</label>
+            <label className="block text-sm font-medium mb-1 text-gray-900 drop-shadow-sm">Number of Adults</label>
             <div className="flex items-center gap-3">
               <button type="button" onClick={() => setForm({ ...form, adults: Math.max(0, Number(form.adults) - 1) })} className="px-3 py-1 rounded-full bg-gray-200 text-lg">−</button>
-              <span className="w-8 text-center font-semibold">{form.adults}</span>
+              <span className="w-8 text-center font-semibold text-gray-900 drop-shadow-sm">{form.adults}</span>
               <button type="button" onClick={() => setForm({ ...form, adults: Number(form.adults) + 1 })} className="px-3 py-1 rounded-full bg-gray-200 text-lg">+</button>
             </div>
           </div>
 
           <div>
-            <label className="block text-sm font-medium mb-1">Number of Kids</label>
+            <label className="block text-sm font-medium mb-1 text-gray-900 drop-shadow-sm">Number of Kids</label>
             <div className="flex items-center gap-3">
               <button type="button" onClick={() => setForm({ ...form, kids: Math.max(0, Number(form.kids) - 1) })} className="px-3 py-1 rounded-full bg-gray-200 text-lg">−</button>
-              <span className="w-8 text-center font-semibold">{form.kids}</span>
+              <span className="w-8 text-center font-semibold text-gray-900 drop-shadow-sm">{form.kids}</span>
               <button type="button" onClick={() => setForm({ ...form, kids: Number(form.kids) + 1 })} className="px-3 py-1 rounded-full bg-gray-200 text-lg">+</button>
             </div>
           </div>
 
           <div>
-            <label className="block text-sm font-medium mb-1">Kids Meals Needed</label>
+            <label className="block text-sm font-medium mb-1 text-gray-900 drop-shadow-sm">Kids Meals Needed</label>
             <div className="flex items-center gap-3">
               <button type="button" onClick={() => setForm({ ...form, kidsMeals: Math.max(0, Number(form.kidsMeals) - 1) })} className="px-3 py-1 rounded-full bg-gray-200 text-lg">−</button>
-              <span className="w-8 text-center font-semibold">{form.kidsMeals}</span>
+              <span className="w-8 text-center font-semibold text-gray-900 drop-shadow-sm">{form.kidsMeals}</span>
               <button type="button" onClick={() => setForm({ ...form, kidsMeals: Number(form.kidsMeals) + 1 })} className="px-3 py-1 rounded-full bg-gray-200 text-lg">+</button>
             </div>
           </div>
