@@ -64,7 +64,7 @@ export default function App() {
           Ray's First Birthday 🎉
         </h1>
         <p className="text-center text-gray-700 text-sm mt-1">
-          레이의 첫 번째 생일에 초대합니다
+          래이의 돌잔치에 초대합니다
         </p>
 
         <p className="text-center text-gray-800 mt-3">
