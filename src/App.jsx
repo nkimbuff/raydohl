@@ -60,7 +60,7 @@ export default function App() {
         {/* Event Details */}
         <div className="mb-4 text-center p-3 bg-pink-50/90 rounded-lg shadow-inner" style={{ backgroundColor: 'rgba(255, 192, 203, 0.9)' }} >
           <h2 className="text-lg font-semibold text-gray-900">🎂 Event Details 🎂</h2>
-          <p className="text-gray-900 mt-1">📅 Date: March 14, 2025</p>
+          <p className="text-gray-900 mt-1">📅 Date: March 14, 2026</p>
           <p className="text-gray-900">⏰ Time: 12:00 PM - 3:00 PM EST</p>
           <p className="text-gray-900">📍 Location: Trummer's on Main</p>
           <p className="text-gray-900">🏠 Address: 7134 Main St, Clifton, VA 20124</p>
